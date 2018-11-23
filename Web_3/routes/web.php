@@ -11,5 +11,6 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'DogsController@index');
 Route::get('/about', 'PagesController@about');
+Route::resource('dogs', 'DogsController');
