@@ -8,10 +8,15 @@
 
 </head>
 <body>
+@include('includes.messages')
 @include('includes.navbar')
     <div class="container">
         @yield('content')
     </div>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
 @include('includes.footer')
 </body>
 </html>
