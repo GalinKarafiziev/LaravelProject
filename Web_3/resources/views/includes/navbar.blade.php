@@ -10,6 +10,9 @@ https://static.thenounproject.com/png/38800-200.png
             <li class="nav-item">
                 <a class="nav-link float-right" style="font-size:25px;font-weight: bold;" href="/about">About</a>
             </li>
+            <li class="nav-item">
+               <a class="nav-link float-right" style="font-size:25px;font-weight: bold;" href="/dogs/create">Add a dog</a>
+            </li>
             <li class="nav-item" id="login">
                 <a class="nav-link" href="#">Register</a>
             </li>

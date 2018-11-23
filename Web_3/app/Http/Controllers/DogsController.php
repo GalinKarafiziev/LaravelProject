@@ -24,7 +24,7 @@ class DogsController extends Controller
      */
     public function create()
     {
-        //
+       return view('pages.create');
     }
 
     /**
@@ -35,7 +35,31 @@ class DogsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,
+      [
+        'name' => 'required',
+        'bread' => 'required',
+        'sex' => 'required',
+        'years' => 'required',
+        'months' => 'required',
+        'body' => 'required',
+      ]);
+
+      //create dog
+      $dog = new Dog;
+      //add from form
+      $dog->name = $request->input('name');
+      $dog->bread = $request->input('bread');
+      $dog->sex = $request->input('sex');
+      $dog->years = $request->input('years');
+      $dog->months = $request->input('months');
+      $dog->body = $request->input('body');
+      //save in db
+      $dog->save();
+
+      return redirect('/dogs')->with('success', 'Dog added');
+
+
     }
 
     /**

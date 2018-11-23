@@ -8,7 +8,7 @@
     {{$dog->name}}
     <br>
     <h2>About me</h2>
-    {{$dog->body}}
+    {!!$dog->body!!}
     <br>
     <small>Written on {{$dog->created_at}}</small>
     <br>
