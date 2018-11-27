@@ -14,4 +14,9 @@
     <br>
 
     <a class="btn btn-dark" href="/">Go Back</a>
+<a href="/dogs/{{$dog->id}}/edit" class="btn btn-dark">Edit</a>
+{!! Form::open(['action'=>['DogsController@destroy', $dog->id] , 'method'=>'POST', 'class'=>'pull-right']) !!}
+{{Form::hidden('_method', 'DELETE')}}
+{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+{!! Form::close() !!}
 @endsection
