@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>Add a dog</h1>
+<div class="createDog">
 {!! Form::open(['action'=>'DogsController@store', 'method'=>'POST']) !!}
 <div class="form-group">
         {{Form::label('name', 'Name:')}}
@@ -25,8 +26,9 @@
 </div>
 <div class="form-group">
         {{Form::label('body', 'Body:')}}
-        {{Form::text('body', '', ['class' => 'form-control', 'placeholder' => 'Description'])}}
+        {{Form::textarea('body', '', ['id'=>'article-ckeditor','class' => 'form-control', 'placeholder' => 'Description'])}}
     </div>
-{{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-{!! Form::close() !!}
+{{Form::submit('Submit', ['class'=>'btn btn-primary float-right'])}}
+        {!! Form::close() !!}
+</div>
 @endsection

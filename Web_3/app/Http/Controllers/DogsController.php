@@ -13,7 +13,8 @@ class DogsController extends Controller
      */
     public function index()
     {
-        $dogs = Dog::all();
+
+        $dogs = Dog::orderBy('created_at', 'dec')->paginate(6);
         return view('pages.index')->with('dogs', $dogs);
     }
 
