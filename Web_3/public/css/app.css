@@ -111,6 +111,8 @@ img {
   background: black !important;
   padding: 20px 25px 20px 25px;
   border-radius: 5px !important;
+  -webkit-box-shadow: 1px 1px 2px black, 0 0 25px black !important;
+          box-shadow: 1px 1px 2px black, 0 0 25px black !important;
 }
 
 .changePages {
@@ -143,11 +145,6 @@ img {
   float: right;
 }
 
-.writtenon {
-  float: right;
-  margin-right: 5px;
-}
-
 .wholepost {
   background: white;
   margin-left: 200px;
@@ -156,6 +153,10 @@ img {
   padding-top: 20px;
   border-radius: 10px;
   border: solid gray 2px;
+}
+
+#editanddelete {
+  margin: 10px;
 }
 
 /*!

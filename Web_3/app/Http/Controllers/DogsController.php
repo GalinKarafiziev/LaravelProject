@@ -83,7 +83,8 @@ class DogsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dog = Dog::find($id);
+        return view ('dogs.edit')->with('dog', $dog);
     }
 
     /**
@@ -95,7 +96,26 @@ class DogsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+        [
+
+          'years' => 'required',
+          'months' => 'required',
+          'body' => 'required',
+        ]);
+
+        //get dog
+        $dog = Dog::Find($id);
+        //edit from form
+        $dog->years = $request->input('years');
+        $dog->months = $request->input('months');
+        $dog->body = $request->input('body');
+        //save in db
+        $dog->save();
+
+        return redirect('/dogs')->with('success', 'Dog edited');
+
+
     }
 
     /**
@@ -106,6 +126,8 @@ class DogsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dog = Dog::find($id);
+        $dog->delete();
+        return redirect('/dogs')->with('success', 'Dog removed');
     }
 }

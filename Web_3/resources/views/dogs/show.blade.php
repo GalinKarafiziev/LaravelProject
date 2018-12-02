@@ -36,8 +36,12 @@
         </div>
     </div>
     <br>
-    <small class="writtenon">Written on {{$dog->created_at}}</small>
     <br>
 
+<a href="/dogs/{{$dog->id}}/edit" class="btn btn-primary" id="editanddelete">Edit</a>
+{!! Form::open(['action'=>['DogsController@destroy', $dog->id] , 'method'=>'POST', 'class'=>'float-right', 'id'=>"editanddelete"]) !!}
+{{Form::hidden('_method', 'DELETE')}}
+{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+{!! Form::close() !!}
 </div>
 @endsection
