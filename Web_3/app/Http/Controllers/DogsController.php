@@ -74,6 +74,7 @@ class DogsController extends Controller
       $dog->months = $request->input('months');
       $dog->body = $request->input('body');
       $dog->some_image = $fileNameToStore;
+      $dog->user_id = auth()->user()->id;
       //save in db
       $dog->save();
 

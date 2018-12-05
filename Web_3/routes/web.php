@@ -14,3 +14,7 @@
 Route::get('/', 'DogsController@index');
 Route::get('/about', 'PagesController@about');
 Route::resource('dogs', 'DogsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
     @php
     $nextID = $dog->id;
     @endphp
     <a class="btn btn-dark" href="/" id="backButton">Back</a>
+    <!--
     @if($nextID != 1)
     <a class="btn btn-dark" href="/dogs/{{$nextID-1}}" id="nextButton">Next</a>
     @endif
+    -->
     <div class="wholepost">
     <img class="coverImage" src="https://i.ytimg.com/vi/wRx3Uvcktm8/maxresdefault.jpg" width="80%" height="300">
     <br>
@@ -44,4 +47,5 @@
 {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
 {!! Form::close() !!}
 </div>
+    </div>
 @endsection

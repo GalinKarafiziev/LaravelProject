@@ -139,6 +139,7 @@ img {
 
 #backButton {
   float: left;
+  margin-left: -30px !important;
 }
 
 #nextButton {
@@ -157,6 +158,14 @@ img {
 
 #editanddelete {
   margin: 10px;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
 
 /*!
