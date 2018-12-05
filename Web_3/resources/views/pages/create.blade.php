@@ -3,7 +3,7 @@
 @section('content')
 <h1>Add a dog</h1>
 <div class="createDog">
-{!! Form::open(['action'=>'DogsController@store', 'method'=>'POST']) !!}
+{!! Form::open(['action'=>'DogsController@store', 'method'=>'POST', 'enctype' => 'multipart/form-data']) !!}
 <div class="form-group">
         {{Form::label('name', 'Name:')}}
         {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Name'])}}
@@ -28,6 +28,10 @@
         {{Form::label('body', 'Body:')}}
         {{Form::textarea('body', '', ['id'=>'article-ckeditor','class' => 'form-control', 'placeholder' => 'Description'])}}
     </div>
+<div class="form-group">
+    {{Form::file('some_image')}}
+</div>
+
 {{Form::submit('Submit', ['class'=>'btn btn-primary float-right'])}}
         {!! Form::close() !!}
 </div>

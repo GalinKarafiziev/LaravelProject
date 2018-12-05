@@ -44,7 +44,25 @@ class DogsController extends Controller
         'years' => 'required',
         'months' => 'required',
         'body' => 'required',
+        'some_image' => 'image|nullable|max:1999'
       ]);
+
+      //handling the file upload
+      if($request->hasFile('some_image')){
+        //filename with extension
+        $filenameWithE = $request->file('some_image')->getClientOriginalName();
+        //filename
+        $filename = pathinfo($filenameWithE, PATHINFO_FILENAME);
+        //extension
+        $extension = $request->file('some_image')->getClientOriginalExtension();
+        //actual store
+        $fileNameToStore = $filename.'__'.time().'.'.$extension; //with timestamp makes it unique
+        //uploading
+        $path = $request->file('some_image')->storeAs('public/images', $fileNameToStore);
+      }
+      else{
+          $fileNameToStore = 'noimage.jpg';
+      }
 
       //create dog
       $dog = new Dog;
@@ -55,6 +73,7 @@ class DogsController extends Controller
       $dog->years = $request->input('years');
       $dog->months = $request->input('months');
       $dog->body = $request->input('body');
+      $dog->some_image = $fileNameToStore;
       //save in db
       $dog->save();
 
