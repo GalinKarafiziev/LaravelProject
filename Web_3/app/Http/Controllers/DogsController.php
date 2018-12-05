@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Dog;
 class DogsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +29,7 @@ class DogsController extends Controller
      */
     public function create()
     {
+
        return view('pages.create');
     }
 
@@ -104,6 +109,9 @@ class DogsController extends Controller
     public function edit($id)
     {
         $dog = Dog::find($id);
+        if(auth()->user()->id !== $dog->user_id){
+            return redirect('/')->with('error', 'Unauthorized user');
+        }
         return view ('dogs.edit')->with('dog', $dog);
     }
 
@@ -147,6 +155,9 @@ class DogsController extends Controller
     public function destroy($id)
     {
         $dog = Dog::find($id);
+        if(auth()->user()->id !== $dog->user_id){
+            return redirect('/')->with('error', 'Unauthorized user');
+        }
         $dog->delete();
         return redirect('/dogs')->with('success', 'Dog removed');
     }

@@ -10,9 +10,7 @@
                 <li >
                     <div class="row">
                         <div class="">
-                            <img src="
-                            https://i.ytimg.com/vi/wRx3Uvcktm8/maxresdefault.jpg
-                            " width="260" height="200">
+                            <img src="/storage/images/{{$dog->some_image}}" width="260" height="200">
                         </div>
 
                         </div>

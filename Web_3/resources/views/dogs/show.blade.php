@@ -12,7 +12,7 @@
     @endif
     -->
     <div class="wholepost">
-    <img class="coverImage" src="https://i.ytimg.com/vi/wRx3Uvcktm8/maxresdefault.jpg" width="80%" height="300">
+    <img class="coverImage" src="/storage/images/{{$dog->some_image}}" width="80%" height="300">
     <br>
 
     <div class="wrapper">
@@ -40,12 +40,15 @@
     </div>
     <br>
     <br>
-
+@if(!Auth::guest())
+    @if(Auth::user()->id == $dog->user_id)
 <a href="/dogs/{{$dog->id}}/edit" class="btn btn-primary" id="editanddelete">Edit</a>
 {!! Form::open(['action'=>['DogsController@destroy', $dog->id] , 'method'=>'POST', 'class'=>'float-right', 'id'=>"editanddelete"]) !!}
 {{Form::hidden('_method', 'DELETE')}}
 {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
 {!! Form::close() !!}
+        @endif
+    @endif
 </div>
     </div>
 @endsection

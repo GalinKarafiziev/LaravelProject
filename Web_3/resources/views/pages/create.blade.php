@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+        <div class="container">
 <h1>Add a dog</h1>
 <div class="createDog">
 {!! Form::open(['action'=>'DogsController@store', 'method'=>'POST', 'enctype' => 'multipart/form-data']) !!}
@@ -35,4 +36,5 @@
 {{Form::submit('Submit', ['class'=>'btn btn-primary float-right'])}}
         {!! Form::close() !!}
 </div>
+        </div>
 @endsection
