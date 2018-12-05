@@ -20,4 +20,5 @@
                 {{Form::submit('Submit', ['class'=>'btn btn-primary float-right'])}}
                 {!! Form::close() !!}
         </div>
+
 @endsection

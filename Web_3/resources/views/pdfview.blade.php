@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <div class="container">
     @php
     $nextID = $dog->id;
@@ -53,4 +51,4 @@
     </div>
 
     <a href="{!! url('/pdfview', $dog->id) !!}">Print</a>
-@endsection
+

@@ -98,6 +98,7 @@ class DogsController extends Controller
     {
         $dog = Dog::find($id);
         return view('dogs.show')->with('dog', $dog);
+
     }
 
     /**
