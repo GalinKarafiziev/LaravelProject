@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */

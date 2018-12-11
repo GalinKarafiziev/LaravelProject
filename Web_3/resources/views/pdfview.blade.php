@@ -50,5 +50,5 @@
 </div>
     </div>
 
-    <a href="{!! url('/pdfview', $dog->id) !!}">Print</a>
+
 

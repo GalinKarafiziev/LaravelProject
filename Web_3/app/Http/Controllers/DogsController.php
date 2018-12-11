@@ -110,7 +110,7 @@ class DogsController extends Controller
     public function edit($id)
     {
         $dog = Dog::find($id);
-        if(auth()->user()->id !== $dog->user_id){
+        if(auth()->user()->id !== $dog->user_id and auth()->user()->admin !== 1){
             return redirect('/')->with('error', 'Unauthorized user');
         }
         return view ('dogs.edit')->with('dog', $dog);

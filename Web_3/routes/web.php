@@ -19,3 +19,8 @@ Auth::routes();
 Route::get('/pdfview/{id}', 'PdfGenerateController@pdfview')->name('generate-pdf');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/yourPosts', 'HomeController@yourPosts');
+
+
+Route::get('/', 'DogsController@index');

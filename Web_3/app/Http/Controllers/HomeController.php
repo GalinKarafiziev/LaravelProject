@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Dog;
 
 use Illuminate\Http\Request;
 use App\User;
@@ -26,6 +27,20 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('home')->with('dogs', $user->dogs);
+        $dogs = Dog::all();
+        if($user->admin == 0) {
+            return view('home')->with('dogs', $user->dogs);
+        }
+        else{
+
+            return view('adminhome')->with('dogs', $dogs);
+        }
     }
+    public function yourPosts(){
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+            return view('yourPosts')->with('dogs', $user->dogs);
+
+    }
+
 }
