@@ -65,6 +65,7 @@ https://static.thenounproject.com/png/38800-200.png
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="/storage/avatar/{{ Auth::user()->avatar }}" style="border-radius:50%!important;width:32px;height:32px;margin-right: 5px;">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 

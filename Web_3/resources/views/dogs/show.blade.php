@@ -23,14 +23,14 @@
                                         @if($dog->years < 2)
                                             {{$dog->years}} year and
                                         @else
-                                            {{$dog->years}} years and
+                                            {{$dog->years}} years 
                                         @endif
                                     @endif
                                     @if($dog->months > 1)
-                                        {{$dog->months}} months
+                                        {{$dog->months}} and months
                                     @endif
                                     old {{$dog->sex}} {{$dog->bread}} and I'm looking for a new owner to take me in their home.
-                                    If you have space for a loving dog like me, you can learn read more information below!
+                                    If you have space for a loving dog like me, you can read more information below!
                                 </span>
         </div>
         <div>

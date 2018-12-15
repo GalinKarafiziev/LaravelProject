@@ -24,3 +24,4 @@ Route::get('/yourPosts', 'HomeController@yourPosts');
 
 
 Route::get('/', 'DogsController@index');
+Route::post('home', 'HomeController@Update_avatar');

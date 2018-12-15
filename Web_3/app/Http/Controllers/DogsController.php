@@ -156,7 +156,7 @@ class DogsController extends Controller
     public function destroy($id)
     {
         $dog = Dog::find($id);
-        if(auth()->user()->id !== $dog->user_id){
+        if(auth()->user()->id !== $dog->user_id and auth()->user()->admin !== 1){
             return redirect('/')->with('error', 'Unauthorized user');
         }
         $dog->delete();

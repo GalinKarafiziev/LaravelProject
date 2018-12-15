@@ -10,8 +10,8 @@
         {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Name'])}}
 </div>
 <div class="form-group">
-        {{Form::label('bread', 'Bread:')}}
-        {{Form::text('bread', '', ['class' => 'form-control', 'placeholder' => 'Bread'])}}
+        {{Form::label('bread', 'Breed:')}}
+        {{Form::text('bread', '', ['class' => 'form-control', 'placeholder' => 'Breed'])}}
 </div>
 <div class="form-group">
         {{Form::label('sex', 'Sex:')}}

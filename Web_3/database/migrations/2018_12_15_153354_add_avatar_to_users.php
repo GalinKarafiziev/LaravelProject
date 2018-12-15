@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAdminToUser extends Migration
+class AddAvatarToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class AddAdminToUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('admin')->default(0);
-        });
 
-        Schema::table('dogs', function($table){
-            $table->string('some_image');
+        Schema::table('users', function($table){
+            $table->string('avatar')->default('default.jpg');
         });
     }
 
@@ -29,8 +26,8 @@ class AddAdminToUser extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('admin');
+        Schema::table('users', function($table){
+            $table->dropColumn('avatar');
         });
     }
 }

@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="avatar_image">
+<img src="/storage/avatar/{{$user->avatar}}" style="border-radius:50%!important;width:150px;height:150px;float:left;margin-left: 25px;margin-right: 120px;">
+<h2 style="">{{$user->name}}'s Profile</h2>
+<form enctype="multipart/form-data" action="/home" method="POST" >
+    
+
+    <input type="file" name="avatar" style="margin-top: 50px;">
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
+    <input type="submit" class="pull-right btn  btn-primary" style="margin-left: 90px;margin-top: 40px;" value="Submit">
+</form>
+</div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -46,5 +57,5 @@
         </div>
     </div>
 
-    <br><br><br><br><br><br><br><br><br>
+    
 @endsection
