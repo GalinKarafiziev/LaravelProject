@@ -41,6 +41,7 @@
                         @endif
 
                     </div>
+                     <a href="/download" class="btn btn-dark float-right" style="background: green;">Export Users As Excel</a>
                 </div>
             </div>
         </div>

@@ -48,14 +48,13 @@ class HomeController extends Controller
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
            $filename = time().'.'.$avatar->getClientOriginalExtension();
-            //Image::make($avatar)->save(public_path('/avatar'.$filename));
-            $path = $avatar->storeAs('public/avatar', $filename);
-            $user = auth()->user();
+            Image::make($avatar)->resize(130,130)->text('Dogs world', 40,20)->save(public_path('/storage/avatar/'.$filename));
+            //$path = $avatar->storeAs('public/avatar', $filename);
+            $user = Auth()->user();
             $user->avatar = $filename;
             $user->save();
             return view('home')->with('dogs', $user->dogs)->with('user', $user);
         }
-
     }
-
+   
 }

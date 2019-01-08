@@ -7,6 +7,7 @@
                 <div class="form-group">
                         {{Form::label('years', 'Years:')}}
                         {{Form::number('years', $dog->years, ['class' => 'form-control', 'placeholder' => 'Years'])}}
+                        
                 </div>
                 <div class="form-group">
                         {{Form::label('months', 'Months:')}}
@@ -18,6 +19,7 @@
                 </div>
                 {{Form::hidden('_method', 'PUT')}}
                 {{Form::submit('Submit', ['class'=>'btn btn-primary float-right'])}}
+
                 {!! Form::close() !!}
         </div>
 

@@ -135,6 +135,10 @@ class DogsController extends Controller
 
         //get dog
         $dog = Dog::Find($id);
+        if(auth()->user()->id !== $dog->user_id and auth()->user()->admin !== 1){
+            return redirect('/')->with('error', 'Unauthorized user');
+        }
+        else{
         //edit from form
         $dog->years = $request->input('years');
         $dog->months = $request->input('months');
@@ -142,8 +146,11 @@ class DogsController extends Controller
         //save in db
         $dog->save();
 
-        return redirect('/dogs')->with('success', 'Dog edited');
+        
 
+
+        return redirect('/dogs')->with('success', 'Dog edited');
+            }
 
     }
 
@@ -162,4 +169,6 @@ class DogsController extends Controller
         $dog->delete();
         return redirect('/dogs')->with('success', 'Dog removed');
     }
+    
+
 }
