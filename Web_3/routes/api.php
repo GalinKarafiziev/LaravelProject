@@ -23,3 +23,8 @@ Route::group(['middleware'=>'web'], function ()
 	Route::get('/dogs/{id}', 'DogsController@show');
 });
 */
+Route::get('/users', 'UserControllers@index');
+Route::delete('/users/{id}', 'UserControllers@delete');
+Route::put('/users', 'UserControllers@update');
+Route::post('/users', 'UserControllers@create');
+Route::get('/users/{id}', 'UserControllers@user');
